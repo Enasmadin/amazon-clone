@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import "./Header.css"
-import { UseAuth } from '../context/GlobalContext';
+import { useAuth } from '../context/GlobalContext';
 import { Auth } from '../firebase';
 
 
 function Header() {
-  const {user}=UseAuth();
+  const { user, basket } = useAuth();
   const handelSignOut = ()=>{
     Auth.signOut();  
   }
@@ -41,7 +41,7 @@ function Header() {
           <Link to="/checkout">
             <div className='header-optionBasket'>
              <img src='../images/icons/shopping-cart.png'  alt=''/>
-              <span className='header-optionLineTwo header-basketCount'> 5 </span>
+              <span className='header-optionLineTwo header-basketCount'> {basket?.length} </span>
             </div>
           </Link> 
         </div>

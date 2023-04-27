@@ -3,12 +3,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import "./Login.css";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { Auth } from '../firebase';
-import { UseAuth } from '../context/GlobalContext';
+import { useAuth } from '../context/GlobalContext';
 
 function Login() {
   const [Email,setEmail]=useState("");
   const [Password,setPassword]=useState("");
-  const {user} = UseAuth();
+  const {user} = useAuth();
   const Navigate= useNavigate();
   console.log(user);
   const handelSigIn = (e)=>{
