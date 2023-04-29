@@ -15,7 +15,8 @@ function CheckOut() {
         <h3> hello, {user?.email}</h3>
         <h2 className='check-out-title'>    Your shopping Basket  </h2>
         <div>
-        {
+        { basket.length > 0 ?
+        (
             basket.map((item)=>(<>
             <CheckOoutProduct 
              key={item.id} 
@@ -25,7 +26,11 @@ function CheckOut() {
              price={item.price}
             image={item.image}
             />
-            </>))
+            </>)))
+            :(<p> 
+              you have no items in your basket .To buy more or more 
+              click "Add To basket "
+            </p>)
 
            
         }

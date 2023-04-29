@@ -8,6 +8,7 @@ import { Auth } from './firebase';
 
 import HomePage from './components/HomePage';
 import CheckOut from './components/CheckOut';
+import Payment from './components/Payment';
 
 
 const App = () => {
@@ -46,6 +47,12 @@ const App = () => {
             <CheckOut/>
          </>
         } /> 
+        <Route  path='/payment' element={
+        <>
+          <Header/>
+          <Payment/>
+        </>
+      }/>
         <Route   path='*' element={<h1> this  is page  not found </h1>}/>
 
        
