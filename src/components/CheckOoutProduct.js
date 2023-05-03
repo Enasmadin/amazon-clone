@@ -4,7 +4,7 @@ import"./CheckOutProduct.css"
 import { useAuth } from '../context/GlobalContext';
 
 
-const CheckOoutProduct = ({image,title,id,price,rating}) => {
+const CheckOoutProduct = ({image,title,id,price,rating,hideenButton}) => {
     const {dispatch}= useAuth();
     const removeFromBasket = ()=>{
         dispatch({
@@ -37,8 +37,10 @@ const CheckOoutProduct = ({image,title,id,price,rating}) => {
            
 
         </div>
-
-        <button onClick={removeFromBasket}> Remove From Basket </button>
+        {!hideenButton && 
+         <button onClick={removeFromBasket}> Remove From Basket </button>
+        }
+       
     </div>
     </div>
   )
